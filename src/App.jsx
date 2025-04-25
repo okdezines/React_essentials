@@ -5,9 +5,9 @@ function App() {
   return(
     
     <main>
-    <Post />;
-    <Post />;
-    <Post />;
+    <Post author = "Ompa" body ="React.js is Awesome!" />;
+    <Post author = "Dupsy" body ="Check out my React Life" />;
+  
   </main>
   )
 }

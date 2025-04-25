@@ -1,12 +1,12 @@
 
-const names= ['ompa', 'Dupsy']
 
-const Post = () => {
-    const chosenName = Math.random() > 0.5 ? names[0] : names[1]
+const Post = (props) => {
+    props.author,
+    props.body
   return (
     <div>
-    <h1>{chosenName}</h1>
-    <h3>React is Awesome!</h3>
+    <h1>{props.author}</h1>
+    <h1>{props.body}</h1>
     </div>
   )
 }
