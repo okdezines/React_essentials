@@ -55,3 +55,8 @@
   .actions button[type='button']:hover {
     color: #d1bee6;
   }
+  .name {
+    color: white;
+    font-weight: 500;
+    font-style: italic;
+  }
