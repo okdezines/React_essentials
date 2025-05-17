@@ -8,7 +8,7 @@ function PostList({isPosting, onStopPosting}) {
     const [posts, setPosts] = useState([]);
     
     function addPostHandler(postData) {
-        setPosts((existingPosts) => {[postData, ...existingPosts]});
+        setPosts((existingPosts) => [postData, ...existingPosts]);
         
     }
     
@@ -20,13 +20,21 @@ function PostList({isPosting, onStopPosting}) {
             <NewPost onCancel={onStopPosting} onAddPost={addPostHandler} 
              />
          </Modal>
-        )}      
+        )}   
+        <h2>Posts</h2>
+        {posts.length > 0 && (
             <ul className={classes.posts}>
-             <Post author = "Dupsy" body ='Check out this cool post!' />
-            
+            {posts.map((post) => 
+                <Post
+                    key={Math.random()}
+                    author={post.author}
+                    body={post.body}/> 
+                    )}
             </ul>
+        )}
+        {posts.length === 0 && <p style={{textAlign:'center', color: 'white'}}>No posts yet!</p>}
         </>
-    )
+    );
 }
 
 export default PostList;

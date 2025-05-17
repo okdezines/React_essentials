@@ -21,8 +21,8 @@ function NewPost({ onCancel, onAddPost }) {
             author: enteredAuthor
   } 
         // console.log(postData)
-        setEnteredBody('')
-        setEnteredAuthor('')
+        // setEnteredBody('')
+        // setEnteredAuthor('')
         onAddPost(postData)
         onCancel()
 }
