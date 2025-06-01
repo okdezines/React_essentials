@@ -3,22 +3,10 @@ import Post from "./Post";
 import classes from "./PostList.module.css";
 
 function PostList() {
- const posts = useLoaderData();
-
-  function addPostHandler(postData) {
-    fetch("http://localhost:8080/posts", {
-      method: "POST",
-      body: JSON.stringify(postData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    setPosts((existingPosts) => [postData, ...existingPosts]);
-  }
+  const posts = useLoaderData();
 
   return (
     <>
-
       {posts.length > 0 && (
         <ul className={classes.posts}>
           {posts.map((post) => (
@@ -26,10 +14,10 @@ function PostList() {
           ))}
         </ul>
       )}
-      { posts.length === 0 && (
+      {posts.length === 0 && (
         <p style={{ textAlign: "center", color: "white" }}>No posts yet!</p>
+        
       )}
-
     </>
   );
 }
